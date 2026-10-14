@@ -45,11 +45,15 @@ All experiments use an authorised AWS account and non-sensitive sample data.
 
 2. **Result:** The file was successfully stored in S3.
 
+![S3 test object uploaded](case001-s3-object-uploaded.png)
+
 # Step 2 - Reproduce AccessDenied
 
 1. Opened the object's HTTPS URL directly in a browser without an authenticated S3 request.
 
 2. **Observed result:** Amazon S3 returned an XML response containing AccessDenied.
+
+![Anonymous S3 AccessDenied](case001-anonymous-acess-denied.png)
 
 # Step 3 - Verify Authenticated Access
 
@@ -66,6 +70,8 @@ All experiments use an authorised AWS account and non-sensitive sample data.
  - Block all public access: **On**
 
  - Bucket policy: **No policy configured**
+
+![S3 public access blocked](case001-bucket-public-access-blocked.png)
 
 # Step 5 - Interpret the Evidence
 
@@ -84,6 +90,8 @@ The AWS IAM Policy Simulator was unavailable under the current account configura
 No account upgrade was performed, and no public access settings were disabled to bypass the restriction.
 
 A controlled IAM permissions investigation remains future work.
+
+![IAM Policy Simulator unavailable](case001-policy-simulator-unavailable.png)
 
 # Security Lessons Learned
 
