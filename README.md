@@ -2,7 +2,7 @@
 
 **A Cloud Security Learning Project exploring AWS troubleshooting through hands-on investigations.**
 
-**Status:** Case 001: Initial S3 Investigation Completed | IAM Investigation Planned
+**Status:** Case 001: Phase 1 Completed | IAM Investigation Planned
 
 # Overview:
 
@@ -103,16 +103,26 @@ A controlled IAM permissions investigation remains future work.
 
 # Project Roadmap
 
+# Phase 1 - S3 Access Investigation (Completed)
 - [x] Create the GitHub repository.
 - [x] Create a private S3 bucket and upload a test object.
 - [x] Reproduce and record an anonymous AccessDenied response.
 - [x] Verify access through the authenticated AWS Console.
 - [x] Examine bucket public-access settings and bucket policy.
 - [x] Document the initial investigation and findings.
-- [] Publish reviewed and redacted evidence screenshots.
-- [] Investigate IAM identity-based permissions in a suitable lab environment.
-- [] Develop an interactive mystery investigation interface.
-- [] Explore additional cloud security and technical support cases.
+- [x] Publish reviewed and redacted evidence screenshots.
+
+# Phase 2 - IAM Permissions Investigation (Planned)
+
+- [ ] Set up a suitable authorised IAM testing environment.
+- [ ] Reproduce an access denial involving an authenticated IAM identity.
+- [ ] Investigate identity-based permissions and identify the cause.
+- [ ] Test a least-privilege solution and solution and document the results.
+
+# Phase 3 - Interactive Mystery Experience (Future Development)
+
+- [ ] Develop an interactive mystery investigation interface.
+- [ ] Explore additional cloud security and technical support cases.
 
 # Learning Approach
 
