@@ -4,7 +4,7 @@
 
 **Status:** Case 001: Phase 1 Completed | IAM Investigation Planned
 
-# Overview:
+## Overview
 
 Project RUNE is a beginner-led cloud security and technical support learning project built around investigative mystery cases.
 
@@ -12,13 +12,13 @@ Each case introduces a technical problem, examines available evidence, investiga
 
 The project combines practical cloud learning, structured troubleshooting and investigative storytelling.
 
-# Case 001 - The Locked Archive
+## Case 001 - The Locked Archive
 
 **Scenario:** A user attempts to retrieve a file stored in Amazon S3 but receives an AccessDenied error.
 
 **Investigation question:** Why is access denied, and is this an actual configuration problem or expected security behaviour?
 
-# Learning Objectives:
+## Learning Objectives:
 
 - Understand Amazon S3 buckets and object storage.
 - Distinguish anonymous access from authenticated access.
@@ -26,7 +26,7 @@ The project combines practical cloud learning, structured troubleshooting and in
 - Develop a structured approach to investigating access errors.
 - Explore AWS IAM and the principle of least privilege in future experiments.
 
-# Lab Environment
+## Lab Environment
 
 - Cloud platform: Amazon Web Services (AWS)
 - Service: Amazon S3
@@ -37,9 +37,9 @@ The project combines practical cloud learning, structured troubleshooting and in
 
 All experiments use an authorised AWS account and non-sensitive sample data.
 
-# Investigation and Findings
+## Investigation and Findings
 
-# Step 1 - Create the Archive
+### Step 1 - Create the Archive
 
 1. Created a private Amazon S3 bucket and uploaded a sample text file.
 
@@ -47,7 +47,7 @@ All experiments use an authorised AWS account and non-sensitive sample data.
 
 ![S3 test object uploaded](case001-s3-object-uploaded.png)
 
-# Step 2 - Reproduce AccessDenied
+### Step 2 - Reproduce AccessDenied
 
 1. Opened the object's HTTPS URL directly in a browser without an authenticated S3 request.
 
@@ -55,25 +55,24 @@ All experiments use an authorised AWS account and non-sensitive sample data.
 
 ![Anonymous S3 AccessDenied](case001-anonymous-acess-denied.png)
 
-# Step 3 - Verify Authenticated Access
+### Step 3 - Verify Authenticated Access
 
 1. Returned to the AWS Management Console and downloaded the same object through the authenticated session.
 
 2. **Observed result:** The file downloaded successfully.
 
-# Step 4 - Examine Bucket Permissions
+### Step 4 - Examine Bucket Permissions
 
 1. Reviewed the bucket's Permissions tab.
 
 2. **Observed configuration:**
 
- - Block all public access: **On**
-
- - Bucket policy: **No policy configured**
+   - Block all public access: **On**
+   - Bucket policy: **No policy configured**
 
 ![S3 public access blocked](case001-bucket-public-access-blocked.png)
 
-# Step 5 - Interpret the Evidence
+### Step 5 - Interpret the Evidence
 
 1. The test showed that anonymous retrieval was denied while access through the authenticated AWS Console session succeeded.
 
@@ -83,7 +82,7 @@ All experiments use an authorised AWS account and non-sensitive sample data.
 
 4. This investigation does not yet demonstrate an IAM user or role being denied access because of a missing or incorrect identity-based policy.
 
-# Investigation Limitation
+## Investigation Limitation
 
 The AWS IAM Policy Simulator was unavailable under the current account configuration.
 
@@ -93,7 +92,7 @@ A controlled IAM permissions investigation remains future work.
 
 ![IAM Policy Simulator unavailable](case001-policy-simulator-unavailable.png)
 
-# Security Lessons Learned
+## Security Lessons Learned
 
 - An AccessDenied response does not automatically mean a system is broken.
 - Authentication and authorisation are different concepts.
@@ -101,9 +100,10 @@ A controlled IAM permissions investigation remains future work.
 - Access-control settings should be investigated before attempting changes.
 - Troubleshooting should preserve secure defaults rather than introduce unnecessary permissions.
 
-# Project Roadmap
+## Project Roadmap
 
-# Phase 1 - S3 Access Investigation (Completed)
+### Phase 1 - S3 Access Investigation (Completed)
+
 - [x] Create the GitHub repository.
 - [x] Create a private S3 bucket and upload a test object.
 - [x] Reproduce and record an anonymous AccessDenied response.
@@ -112,19 +112,19 @@ A controlled IAM permissions investigation remains future work.
 - [x] Document the initial investigation and findings.
 - [x] Publish reviewed and redacted evidence screenshots.
 
-# Phase 2 - IAM Permissions Investigation (Planned)
+### Phase 2 - IAM Permissions Investigation (Planned)
 
 - [ ] Set up a suitable authorised IAM testing environment.
 - [ ] Reproduce an access denial involving an authenticated IAM identity.
 - [ ] Investigate identity-based permissions and identify the cause.
-- [ ] Test a least-privilege solution and solution and document the results.
+- [ ] Test a least-privilege solution and document the results.
 
-# Phase 3 - Interactive Mystery Experience (Future Development)
+### Phase 3 - Interactive Mystery Experience (Future Development)
 
 - [ ] Develop an interactive mystery investigation interface.
 - [ ] Explore additional cloud security and technical support cases.
 
-# Learning Approach
+## Learning Approach
 
 This project is being developed alongside my Higher Diploma in Science in Computing at the National College of Ireland.
 
