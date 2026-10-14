@@ -6,11 +6,11 @@
 
 ## Overview
 
-Project RUNE is a beginner-led cloud security and technical support learning project built around investigative mystery cases.
+Project RUNE is my personal AWS learning project, created as I work towards a career in cloud support and security.
 
-Each case introduces a technical problem, examines available evidence, investigates possible causes and documents findings from an authorised lab environment.
+For Case 001, I set up a private Amazon S3 bucket and investigated why opening a file's URL in a browser returned an AccessDenied error. I wanted to understand whether something was wrong with the configuration or whether AWS was working as intended.
 
-The project combines practical cloud learning, structured troubleshooting and investigative storytelling.
+I'm documenting what I test, what I find and what I still need to learn. The longer-term idea is to turn these investigations into interactive mystery cases.
 
 ## Case 001 - The Locked Archive
 
@@ -74,13 +74,13 @@ All experiments use an authorised AWS account and non-sensitive sample data.
 
 ### Step 5 - Interpret the Evidence
 
-1. The test showed that anonymous retrieval was denied while access through the authenticated AWS Console session succeeded.
+1. The file returned AccessDenied when I opened its URL directly in a browser, but I could download it through the AWS Management Console.
 
-2. This is consistent with the bucket's private configuration and Amazon S3's default access-control behaviour.
+2. I checked the bucket permissions and found that Block Public Access was enabled and no bucket policy was configured.
 
-3. **Conclusion:** The observed AccessDenied response is expected security behaviour, not evidence that the bucket is misconfigured.
+3. **Conclusion:** The error was expected. The bucket was private, so an unauthenticated request could not retrieve the file.
 
-4. This investigation does not yet demonstrate an IAM user or role being denied access because of a missing or incorrect identity-based policy.
+4. This test did not reproduce an IAM permission error involving an authenticated user or role. That will be part of Phase 2.
 
 ## Investigation Limitation
 
@@ -126,8 +126,6 @@ A controlled IAM permissions investigation remains future work.
 
 ## Learning Approach
 
-This project is being developed alongside my Higher Diploma in Science in Computing at the National College of Ireland.
+I'm building Project RUNE alongside my Higher Diploma in Science in Computing at the National College of Ireland.
 
-The focus is on practical experimentation, understanding why technical issues occur and communicating technical findings clearly.
-
-Project RUNE is a work in progress, with each case expanded as new technical skills and evidence become available.
+This is my first AWS investigation. My aim is to build practical experience, learn how to troubleshoot problems and become more confident explaining technical findings.
